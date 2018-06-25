@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Audio player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/indexStyle.css">
+    <link rel="stylesheet" href="style/playerStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/ajaxFunc.js"></script>
+    <script src='./js/jquery.arctext.js'></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/onReady.js"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <div id="searchArea">
+            <i type="button" class="fa fa-search">
+                <input id="search" type="text" placeholder="Search Playlist">
+            </i>
+        </div>
+        <input type="button" id="addPlaylist" value="Add New Playlist">
+    </div>
+
+    <div id="addPlaylistModal">
+        <div id="addNew">
+            <div id="addPlaylistTitle">
+                <h3>Add New Playlist</h3>
+            </div>
+            <label>Playlist Name:
+                <input type="text" id="imgName">
+                <br> </label>
+            <label>Playlist URL:
+                <input type="text" id="imgURL" placeholder="http://">
+                <br> </label>
+                <p>
+                <input id="new_playlist" class="allButtons" type="submit" value="Next" onclick="nextStep()">
+            </p>
+            <p>
+                <input id="reset" type="submit" class="allButtons" value="Reset Fields">
+            </p>
+        </div>
+        <div class="preview">
+            <img name="imageHolder" id="imageHolder" src="">
+        </div>
+    </div>
+
+    <div class="tab" id="addSong">
+        <h3>Add Songs Name</h3>
+        <form class="newSong">
+            <label>Name:
+                <br>
+                <input name="name" class="newSongName">
+                <br>
+            </label>
+            <label>Url:
+                <br>
+                <input name="url" class="newSongUrl" placeholder="mp3 only">
+            </label>
+            <br>
+            <label>Name:
+                <br>
+                <input name="name" class="newSongName">
+            </label>
+            <br>
+            <label>Url:
+                <br>
+                <input name="url" class="newSongUrl" placeholder="mp3 only">
+            </label>
+            <br>
+        </form>
+        <div id="songsTab"></div>
+        <span id="addSongBtn">
+            <i class="fa fa-plus-circle"></i> 
+        </span>
+        <button id="savePlaylist" class="allButtons">finish & save </button>
+    </div>
+
+    <div id="deletePlaylist">
+        <form action="" class="song_list" style="display: inline-block;">
+            <h3>Are you sure?</h3>
+            <p>
+                <input class="delete allButtons" type="submit" value="Yes">
+                <input class="delete allButtons" type="submit" value="No">
+            </p>
+        </form>
+    </div>
+
+    <div id="playerCover">
+        <div id="player">
+            <div id="playPause">
+                <div id="playerImg"></div>
+                <i class="fa fa-play" aria-hidden="true"></i>
+            </div>
+            <div id="sArea">
+                <div id="insTime">00:00</div>
+                <div id="sHover"></div>
+                <div id="seekBar">
+                    <div id="seName"></div>
+                </div>
+                <div id="trackName"></div>
+            </div>
+
+            <div id="aTime">
+                <div id="aTm">
+                    <div id="aPlayed">00:00</div>
+                    <div id="aTotal">00:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="all-playlists"></div>
+    <script>
+        getList();
+    </script>
+</body>
+
+</html>

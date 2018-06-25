@@ -1,0 +1,173 @@
+#playPause,#sArea,#aTime,#aPlayed,#aTotal
+{
+	display:table-cell;
+	vertical-align:middle;
+}
+
+#player,#aTm
+{
+	display:table;
+	width:100%;
+}
+
+#playerCover
+{
+	/*margin: 100px 200px 0px 200px;*/
+	position: fixed;
+	box-shadow: 0px 0px 10px #adadad;
+	height: 200px;
+	width: 550px;
+    border-radius: 500px;
+    background-color: rgba(161, 14, 7, 0.726);
+    display: none;
+    padding: 30px;
+}
+
+#nextSong ,#prevSong {
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	float: right;
+	color:#fff;		
+}
+
+.nowPlayingStyle {
+    display: flex;
+    animation-name: rotate; 
+    animation-duration: 1.5s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: 1;
+}
+
+.nowPlayingStyle .playlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: rotateReverse; 
+    animation-duration: 1.5s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+#insTime
+{
+	position: absolute;
+	top: -37px;
+	padding: 5px 7px;
+	font-size: 14px;
+	color: #fff;
+	background-color: #000;
+	border-radius: 4px;
+	display:none;
+}
+
+#playPause
+{
+	width:18px;
+}
+
+#aTime
+{
+	width: 100px;
+	font-size:14px;
+}
+
+#aPlayed
+{
+	border-right: 1px solid #af111c;
+}
+
+#playPause,#aTime
+{
+	text-align:center;
+	color:#fff;
+	padding:15px;
+}
+
+#sHover
+{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	height:48px;
+	background-color: #fff;
+	width: 0px;
+	z-index: 3;
+	opacity: 0.3;
+}
+
+#sArea,#seekBar
+{
+	position:relative;
+}
+
+#sArea
+{
+	height:48px;
+	width: 65%;
+}
+
+#seekBar
+{
+	width: 0px;
+	overflow: hidden;
+	position: absolute;
+	top: 0px;
+	height:18px;
+	padding: 15px 0px;
+	left: 0px;
+	color: #fff;
+	z-index: 2;
+	background-color: #ce2317;
+}
+
+#trackName
+{
+	padding-left: 15px;
+	color: #9a0712;
+	z-index: 1;
+}
+
+#playPause,#sArea
+{
+	cursor:pointer;
+}
+
+#seName
+{
+	padding-left:15px;
+	white-space: pre;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        transform-origin: center;
+    }
+    to { 
+        transform: rotate(360deg);
+        transform-origin: center;
+    }
+}
+
+@keyframes rotateReverse {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+
+}
+
+.imgOnPlay {
+    display: flex;
+    animation-name: rotate; 
+    animation-duration: 1.5s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: 1;
+}
+
